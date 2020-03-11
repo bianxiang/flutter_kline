@@ -69,6 +69,8 @@ abstract class BaseChartPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+
+    canvas.clipRect(Rect.fromLTRB(0, 0, size.width, size.height));
     mDisplayHeight = size.height - ChartStyle.topPadding - ChartStyle.bottomDateHigh;
     mWidth = size.width;
     mMarginRight = (mWidth / ChartStyle.gridColumns - mPointWidth) / scaleX;
